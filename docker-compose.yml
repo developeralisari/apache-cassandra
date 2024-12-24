@@ -1,0 +1,11 @@
+version: '3.9'
+
+services:
+  cassandra:
+    image: cassandra:latest  # En son sürüm
+    ports:
+      - "9042:9042"  # Cassandra'nın varsayılan portu
+    volumes:
+      - ~/apps/cassandra:/var/lib/cassandra  # Verilerin kalıcı olarak saklanması
+    environment:
+      - CASSANDRA_CLUSTER_NAME=my_cluster  # Küme adı
